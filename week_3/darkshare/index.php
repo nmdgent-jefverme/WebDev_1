@@ -82,6 +82,7 @@ if(is_dir(UPLOAD_PATH)){
             </div>
             <div class="buttons">
                 <a href="uploads/<?php echo $file; ?>" class="btn" download="">Download</a>
+        <?php if(in_array($info['extension'], TXT_EXTENSIONS)) {?><a href="edit.php?file=<?php echo $file; ?>" class="btn">Edit</a><?php } ?>
             </div>
         </div> 
 
