@@ -1,9 +1,12 @@
-<?php 
+<?php
+session_start();
+if(isset($_SESSION['logout'])) session_abort();
+if(!isset($_SESSION['login'])){
+	header('Location: login.php');
+}
 $content = './content';
 if(is_dir($content)){
     $files = array_diff(scandir($content), array('..', '.'));
-}else{
-    echo 'geen succes';
 }
 
 ?>
@@ -23,7 +26,6 @@ if(is_dir($content)){
 <?php
 foreach ($files as $file) {
 	$info = pathinfo($file);
-	echo file_get_contents($file);
 ?>
 	<li><a href="?page=<?php echo $info['filename'] ?>"><?php echo substr($info['filename'], 3); ?></a></li>
 <?php
@@ -32,6 +34,8 @@ foreach ($files as $file) {
 </ul>
 </nav>
 
-	
+<form action="index.php" method="post">
+	<input type="submit" value="log out" name="logout">
+</form>
 </body>
 </html>
