@@ -14,8 +14,8 @@ $query = 'SELECT * from order_details INNER JOIN orders ON order_details.order_i
 $stmt = $db->prepare($query);
 $stmt->execute([':id' => $id ,]);
 $result = $stmt->fetchAll();
-
-/*echo '<pre>';
+/*
+echo '<pre>';
 print_r($result);
 echo '</pre>';
 */
@@ -35,6 +35,7 @@ echo '</pre>';
 		<tr>
 			<th>Product code</th>
 			<th>Product name</th>
+			<th>Quantity</th>
 			<th>Price</th>
 		</tr>
 		<?php
@@ -43,9 +44,17 @@ echo '</pre>';
 			}
 		?>
 		<tr>
-		<th></th>
-		<th>total price: </th>
-		<th><?php echo $result['quantity'] * $result['list_price']; ?></th>
+			<th></th>
+			<th></th>
+			<th>total price: </th>
+			<th><?php
+				$total = 0;
+				foreach($result as $product){
+					$total += $product['quantity'] * $product['list_price']; 
+				}
+				echo $total;
+			?>&euro;
+			</th>
 		</tr>
 	</table>
 	<a href="index.php">return</a>

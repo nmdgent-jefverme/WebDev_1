@@ -26,3 +26,15 @@ tr:nth-child(even) {
 	font-size: 13px;
 	padding: 8px;
 }
+
+a {
+	color: black;
+}
+
+a:hover {
+	color: green;
+}
+
+.delete:hover {
+	color: red;
+}

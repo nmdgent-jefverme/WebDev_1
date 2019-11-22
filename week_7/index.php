@@ -27,6 +27,10 @@ echo '</pre>'; */
 </head>
 <body>
 <table>
+<form action="index.php" method="get">
+	<input type="text" name="name" id="" placeholder="naam" class="text">
+	<button type="submit" class="button">Search</button>
+</form>
 	<tr>
 		<th>ID</th>
 		<th>ship name</th>
