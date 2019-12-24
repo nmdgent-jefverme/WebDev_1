@@ -25,3 +25,14 @@ if(isset($_COOKIE['name'])){
 </body>
 </html>
 <?php } ?>
+
+
+<?php
+$name = '';
+if (isset($_GET["name"])) {
+	$name = $_GET["name"];
+	setcookie("name", $_GET["name"], time() + 86400);
+} else {
+	$name = $_COOKIE["name"];
+}
+?>

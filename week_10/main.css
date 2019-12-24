@@ -1,0 +1,29 @@
+body {
+	background-color: lightgray;
+}
+
+.container {
+	margin: 0 auto;
+	width: 50%;
+}
+
+.message {
+	background-color: white;
+	padding: 5px;
+	margin: 5px;
+	border-radius: 3px;
+	display: flex;
+	flex-direction: column;
+}
+
+.tags {
+	display: flex;
+}
+
+.tag {
+	border: 1px solid black;
+	width: auto;
+	margin-right: 3px;
+	padding: 2px;
+	border-radius: 2px;
+}

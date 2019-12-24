@@ -1,0 +1,1 @@
+<label><input type="checkbox" value="<?php echo $date['doedel_date_id'] ?>" name="dates[]"> <span><?php echo date('l\, j M Y h:i', $doedel_date); ?></span></label><br>
